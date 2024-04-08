@@ -10,28 +10,19 @@ class RestaurantLogin extends Model
     use HasFactory;
 
 
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'email',
         'password'
     ];
-
-    /**
-     * @var array<int, string>
-     */
 
     protected $hidden = [
         'password',
         'remember_token'
     ];
 
-    protected function casts() : array
-    {
-        return [
-            'email_verified_at' => 'dateTime',
-            'password' => 'hashed'
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
 }
+

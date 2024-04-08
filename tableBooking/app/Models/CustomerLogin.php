@@ -9,7 +9,6 @@ class CustomerLogin extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'email',
         'password'
@@ -20,11 +19,8 @@ class CustomerLogin extends Model
         'remember_token'
     ];
 
-    protected function casts()
-    {
-        return [
-            'email_verfied_at' => 'datetime',
-            'password' => 'hashed'
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
 }

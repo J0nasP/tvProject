@@ -6,6 +6,8 @@ use App\Models\CustomerLogin;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
+
+
 class CustomerLoginController extends Controller
 {
     /**
@@ -36,9 +38,9 @@ class CustomerLoginController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CustomerLogin $customerLoginEmail)
+    public function show(CustomerLogin $id)
     {
-        $customerLogin = CustomerLogin::find($customerLoginEmail);
+        $customerLogin = CustomerLogin::find($id);
         
         if(!empty($customerLogin)) {    
             return response()->json($customerLogin);
@@ -54,11 +56,11 @@ class CustomerLoginController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CustomerLogin $customerLoginEmail)
+    public function update(Request $request, CustomerLogin $id)
     {
-        if (CustomerLogin::where('email', $customerLoginEmail)->exist()){
+        if (CustomerLogin::where('id', $id)->exist()){
         
-            $customerLogin =  CustomerLogin::find($customerLoginEmail);
+            $customerLogin =  CustomerLogin::find($id);
             $customerLogin->email = is_null($request->email) ? $customerLogin->email : $request->email;
             $customerLogin->password = is_null($request->password) ? $customerLogin->password : $request->password;
             $customerLogin->save();
@@ -76,12 +78,14 @@ class CustomerLoginController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CustomerLogin $customerLoginEmail)
-    {
-        if(CustomerLogin::where('email', $customerLoginEmail)->exists()){
-            $customerLogin = CustomerLogin::find($customerLoginEmail);
-            $customerLogin::delete();
+    public function destroy(CustomerLogin $id)
+    {   
+        $customerLogin = CustomerLogin::findorFail($id);
+        if($customerLogin != null){
 
+            $customerLogin->delete();
+            $customerLogin->truncate();
+            
             return response()->json([
                 "message" => " Customer Login Deleted"
             ], 202);
