@@ -19,6 +19,7 @@ class Customer extends Model
         'city',
         'zipcode',
         'email',
-        'phone_number'
+        'phone_number',
+        'total_visits'
     ];
 }
