@@ -24,7 +24,7 @@ class CustomerFactory extends Factory
             'zip_code' => fake()->postcode(),
             'email' => fake()->email(),
             'phone_number' => fake()->phoneNumber(),
-            'total_visists' => rand(0, 50)
+            'total_visits' => rand(0, 50)
 
         ];
     }

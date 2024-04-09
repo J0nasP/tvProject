@@ -41,8 +41,8 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::find($restaurantId);
 
-        if(!empty($restaurantId)){
-            return response()->json($restaurantId);
+        if(!empty($restaurant)){
+            return response()->json($restaurant);
         }else {
             return response()->json([
                 'message' => 'Restaurant Not Found'
