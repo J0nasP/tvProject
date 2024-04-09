@@ -84,7 +84,7 @@ class CustomerController extends Controller
     public function destroy(Customer $customerId)
     {
         $customer = Customer::findorFail($customerId);
-        if ($customer != null){
+        if ($customer !== null){
             $customer->delete();
             $customer->truncate();
 
