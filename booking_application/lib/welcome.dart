@@ -23,7 +23,7 @@ class CustomUserState extends State<CustomUser> {
         child: Form(
           key: _formKey,
           child: Padding(
-            padding: EdgeInsets.all(120.0),
+            padding: EdgeInsets.all(60.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -59,7 +59,7 @@ class CustomUserState extends State<CustomUser> {
                   onPressed: () {
                     Navigator.pushNamed(context, "/count");
                   },
-                  child: const Text('Næste Side'),
+                  child: const Text('Fortsæt til betilling'),
                 )
               ],
             ),

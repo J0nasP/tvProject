@@ -26,14 +26,16 @@ class ConfirmationPageState extends State<ConfirmationPage> {
               ),
               const Text(
                 "SUCCES ",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 30,
               ),
               const Text(
                 "Vi ser frem til dit besøg",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
               SizedBox(
                 height: 20,
