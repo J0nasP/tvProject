@@ -3,13 +3,12 @@ import 'package:booking_application/signup.dart';
 import 'package:flutter/material.dart';
 import 'welcome.dart';
 import 'personCount.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'calendar.dart';
 import 'userInfo.dart';
 import 'confirmation.dart';
 
 void main() {
-  initializeDateFormatting().then((_) => runApp(MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
