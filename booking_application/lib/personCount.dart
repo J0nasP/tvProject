@@ -29,6 +29,32 @@ class PersonCountState extends State<PersonCount> {
     });
   }
 
+  checkCount() {
+    if (_counter >= 0) {
+      return AlertDialog(
+        title: const Text("Fejl"),
+        content: const SingleChildScrollView(
+          child: ListBody(
+            children: [
+              Text("Der skete en fejl"),
+              Text("Du skal vælge et gyldigt antal personer"),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("Okay"),
+          )
+        ],
+      );
+    } else {
+      return Navigator.pushNamed(context, "/calendar");
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -38,6 +64,7 @@ class PersonCountState extends State<PersonCount> {
             Text(
               "Hvor mange personer ønsker du at reservere til?",
               style: TextStyle(fontSize: 20),
+              textAlign: TextAlign.center,
             ),
             AnimatedOpacity(
               opacity: _counter != 0 ? 1.0 : 0.0,
@@ -71,7 +98,12 @@ class PersonCountState extends State<PersonCount> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/calendar");
+//                checkCount();
+                if (_counter == 0) {
+                  return;
+                } else {
+                  Navigator.pushNamed(context, "/calendar");
+                }
               },
               child: Text("Videre"),
             ),

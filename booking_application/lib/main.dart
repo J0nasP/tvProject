@@ -20,12 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Table Booking",
         theme: ThemeData(
-          primaryColor: Colors.deepPurple,
+          primaryColor: Colors.blueAccent,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple,
+            seedColor: Colors.blueAccent,
           ),
         ),
-        initialRoute: '/calendar',
+        initialRoute: '/count',
         routes: {
           '/': (context) => const CustomUser(),
           '/count': (context) => const PersonCount(),
