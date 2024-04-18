@@ -70,7 +70,9 @@ class PersonCountState extends State<PersonCount> {
               height: 30,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/calendar");
+              },
               child: Text("Videre"),
             ),
           ],

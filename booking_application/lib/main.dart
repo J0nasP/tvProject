@@ -6,6 +6,7 @@ import 'personCount.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'calendar.dart';
 import 'userInfo.dart';
+import 'confirmation.dart';
 
 void main() {
   initializeDateFormatting().then((_) => runApp(MyApp()));
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             seedColor: Colors.deepPurple,
           ),
         ),
-        initialRoute: '/',
+        initialRoute: '/calendar',
         routes: {
           '/': (context) => const CustomUser(),
           '/count': (context) => const PersonCount(),
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           "/login": (context) => const LoginPage(),
           '/signup': (context) => const SignupPage(),
           '/userinfo': (context) => const UserInfo(),
+          '/confirmation': (context) => const ConfirmationPage(),
         });
   }
 }

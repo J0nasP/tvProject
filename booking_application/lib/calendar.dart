@@ -21,8 +21,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
   @override
   void initState() {
     super.initState();
-    // DateTime.now().startOfDay
-    // DateTime.now().endOfDay
+
     mockBookingService = BookingService(
         serviceName: 'Booking Service',
         serviceDuration: 30,
