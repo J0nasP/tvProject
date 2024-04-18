@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const CustomUser(),
           '/count': (context) => const PersonCount(),
-          '/calendar': (context) => const BookingCalendarDemoApp(),
           "/login": (context) => const LoginPage(),
           '/signup': (context) => const SignupPage(),
           '/userinfo': (context) => const UserInfo(),
