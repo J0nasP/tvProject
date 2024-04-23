@@ -1,6 +1,9 @@
 <?php
 
 
+
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerLoginController;
@@ -28,3 +31,7 @@ Route::get('restaurantlogins/{id}', [RestaurantLoginController::class, 'show']);
 Route::post('restaurantlogins', [RestaurantLoginController::class, 'store']);
 Route::put('restaurantlogin/{id}', [RestaurantLoginController::class, 'update']);
 Route::delete('restaurantlogins/{id}', [RestaurantLoginController::class, 'delete']);
+
+
+
+Route::get('/user/', [App\Http\Controllers\UserController::class,'indexJson'] );
