@@ -1,19 +1,9 @@
 <?php
 
-
-
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerLoginController;
 use App\Http\Controllers\RestaurantLoginController;
-
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 
 
 //routes for the customer login table
@@ -34,4 +24,4 @@ Route::delete('restaurantlogins/{id}', [RestaurantLoginController::class, 'delet
 
 
 
-Route::get('/user/', [App\Http\Controllers\UserController::class,'indexJson'] );
+Route::get('user/', [App\Http\Controllers\UserController::class,'indexJson'] );

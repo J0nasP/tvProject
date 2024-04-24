@@ -32,7 +32,7 @@
             }
         },
         created() {
-            axios.get('/api/users')
+            axios.get('/api/user')
             .then(response => {
                 this.users = response.data.data;
             } )
