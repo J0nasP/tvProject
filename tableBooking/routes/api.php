@@ -3,7 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerLoginController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\RestaurantLoginController;
+
 
 
 //routes for the customer login table
@@ -19,9 +21,15 @@ Route::delete('customerlogins/{id}', [CustomerLoginController::class, 'delete'])
 Route::get('restaurantlogins', [RestaurantLoginController::class, 'index']);
 Route::get('restaurantlogins/{id}', [RestaurantLoginController::class, 'show']);
 Route::post('restaurantlogins', [RestaurantLoginController::class, 'store']);
-Route::put('restaurantlogin/{id}', [RestaurantLoginController::class, 'update']);
+Route::put('restaurantlogins/{id}', [RestaurantLoginController::class, 'update']);
 Route::delete('restaurantlogins/{id}', [RestaurantLoginController::class, 'delete']);
 
+//Routes for the reservations
+Route::get('reservations', [ReservationController::class, 'index']);
+Route::get('reservations/{id}', [ReservationController::class, 'show']);
+Route::post('reservations', [ReservationController::class, 'store']);
+Route::put('reservations/{id}', [ReservationController::class, 'update']);
+Route::delete('reservations/{id}', [ReservationController::class, 'delete']);
+// for the view on the backend
+Route::get('reservations/',  [ReservationController::class, 'indexJson']);
 
-
-Route::get('user/', [App\Http\Controllers\UserController::class,'indexJson'] );

@@ -14,7 +14,6 @@ class Reservation extends Model
         'pax',
         'date',
         'time',
-        'customer',
         'remarks',
         'total_visist'
     ];
