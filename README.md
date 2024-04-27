@@ -32,3 +32,4 @@ The frontend is now running
 For the flutter Application:
 In the folder "booking_application"
 1. Run thhe command "flutter run"
+Or simply open in VS CODE with the flutter plugin installed and press F5
