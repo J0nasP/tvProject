@@ -17,12 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call(UserTableSeeder::class);
-
         CustomerLogin::factory(25)->create();
         RestaurantLogin::factory(25)->create();
         Customer::factory(100)->create();
-        Restaurant::factory(25)->create();
+        //Restaurant::factory(25)->create();
         Reservation::factory(25)->create();
 
     }

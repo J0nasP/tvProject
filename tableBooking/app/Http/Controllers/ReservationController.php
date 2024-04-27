@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
-use App\Models\Restaurant;
 use GuzzleHttp\RetryMiddleware;
 use Illuminate\Http\Request;
+use App\Http\Resources\ReservationReesource;
 
 class ReservationController extends Controller
 {
@@ -27,7 +27,6 @@ class ReservationController extends Controller
         $reservation->pax = $request->pax;
         $reservation->date = $request->date;
         $reservation->time = $request->time;
-        $reservation->customer = $request->customer;
         $reservation->remarks = $request->remarks;
         $reservation->total_visits = $request->total_visits;
         $reservation->save();
@@ -62,7 +61,6 @@ class ReservationController extends Controller
             $reservation->pax = is_null($request->pax) ? $reservation->pax : $request->name;
             $reservation->date = is_null($request->date) ? $reservation->date : $request->date;
             $reservation->time = is_null($request->time) ? $reservation->time : $request->time;
-            $reservation->customer = is_null($request->customer) ? $reservation->customer : $request->customer;
             $reservation->remarks = is_null($request->remarks) ? $reservation->remarks : $request->remarks;
             $reservation->total_visits =is_null($request->total_visits) ? $reservation->total_visits : $request->total_visits;
             $reservation->save();
@@ -95,5 +93,15 @@ class ReservationController extends Controller
                 'message' => 'Reservation Not Found'
             ], 404);
         }
+    }
+
+    public function indexJson() {
+        $reservation = Reservation::query()->paginate(20);
+        return ReservationReesource::collection($reservation);
+
+    }
+
+    public function reservationIndex(Request $request) {
+        return view('reservation.index');
     }
 }

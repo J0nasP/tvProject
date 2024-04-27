@@ -7,6 +7,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import UserIndex from './components/User/UserIndex.vue';
+import ReservationIndex from './components/Reservation/ReservationIndex.vue';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -18,5 +19,5 @@ const app = createApp({});
 
 
 app.component('user-index', UserIndex)
-
+app.component('reservation-index', ReservationIndex)
 app.mount('#app');
