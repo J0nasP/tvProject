@@ -106,6 +106,17 @@ class UserInfoState extends State<UserInfo> {
                     filled: true),
               ),
               const SizedBox(height: 20),
+              TextFormField(
+                decoration: InputDecoration(
+                    hintText: "evt. bemærkninger",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(18),
+                      borderSide: BorderSide.none,
+                    ),
+                    fillColor: Colors.blueAccent.withOpacity(0.1),
+                    filled: true),
+              ),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => {
                   Navigator.pushNamed(context, "/confirmation"),

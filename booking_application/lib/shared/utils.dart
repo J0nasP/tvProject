@@ -1,38 +1,35 @@
+// Copyright 2019 Aleksander Woźniak
+// SPDX-License-Identifier: Apache-2.0
+
+import 'dart:collection';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-typedef DayBuilder = Widget? Function(BuildContext context, DateTime day);
+/// Example event class.
+class Event {
+  final String title;
 
-typedef FocusedDayBuilder = Widget? Function(
-    BuildContext context, DateTime day, DateTime focusedDay);
+  const Event(this.title);
 
-typedef TextFormatter = String Function(DateTime date, dynamic locale);
-
-enum AvailableGestures { none, verticalSwipe, horizontalSwipe, all }
-
-enum CalenderFormat { month, twoWeeks, week }
-
-enum StartingDayOfTheWeek {
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday,
-  sundays
+  @override
+  String toString() => title;
 }
 
-int getWeekDayNumber(StartingDayOfTheWeek weekday) {
-  return StartingDayOfTheWeek.values.indexOf(weekday) + 1;
+int getHashCode(DateTime key) {
+  return key.day * 1000000 + key.month * 10000 + key.year;
 }
 
-DateTime normalizeDate(DateTime date) {
-  return DateTime.utc(date.year, date.month, date.day);
+/// Returns a list of [DateTime] objects from [first] to [last], inclusive.
+List<DateTime> daysInRange(DateTime first, DateTime last) {
+  final dayCount = last.difference(first).inDays + 1;
+  return List.generate(
+    dayCount,
+    (index) => DateTime.utc(first.year, first.month, first.day + index),
+  );
 }
 
-bool isSameDay(DateTime? a, DateTime? b) {
-  if (a == null || b == null) {
-    return false;
-  }
-
-  return a.year == b.year && a.month == b.month && a.day == b.day;
-}
+final kToday = DateTime.now();
+final kFirstDay = DateTime(kToday.year, kToday.month - 3, kToday.day);
+final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
