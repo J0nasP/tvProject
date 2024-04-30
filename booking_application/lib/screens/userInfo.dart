@@ -1,4 +1,4 @@
-import 'package:booking_application/signup.dart';
+import 'package:booking_application/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
 

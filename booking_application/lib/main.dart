@@ -1,12 +1,12 @@
-import 'package:booking_application/loginPage.dart';
-import 'package:booking_application/select_time.dart';
-import 'package:booking_application/signup.dart';
+import 'package:booking_application/screens/loginPage.dart';
+import 'package:booking_application/screens/select_time.dart';
+import 'package:booking_application/screens/signup.dart';
 import 'package:flutter/material.dart';
-import 'welcome.dart';
-import 'personCount.dart';
-import 'calendar.dart';
-import 'userInfo.dart';
-import 'confirmation.dart';
+import 'screens/welcome.dart';
+import 'screens/personCount.dart';
+import 'screens/calendar.dart';
+import 'screens/userInfo.dart';
+import 'screens/confirmation.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
