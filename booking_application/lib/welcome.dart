@@ -59,7 +59,7 @@ class CustomUserState extends State<CustomUser> {
                   onPressed: () {
                     Navigator.popAndPushNamed(context, "/count");
                   },
-                  child: const Text('Fortsæt til betilling'),
+                  child: const Text('Fortsæt til bestilling'),
                 )
               ],
             ),

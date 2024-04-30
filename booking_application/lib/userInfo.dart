@@ -20,6 +20,14 @@ class UserInfoState extends State<UserInfo> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popAndPushNamed(context, "/time");
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 60),
