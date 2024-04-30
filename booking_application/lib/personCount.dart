@@ -29,34 +29,16 @@ class PersonCountState extends State<PersonCount> {
     });
   }
 
-  checkCount() {
-    if (_counter >= 0) {
-      return AlertDialog(
-        title: const Text("Fejl"),
-        content: const SingleChildScrollView(
-          child: ListBody(
-            children: [
-              Text("Der skete en fejl"),
-              Text("Du skal vælge et gyldigt antal personer"),
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text("Okay"),
-          )
-        ],
-      );
-    } else {
-      return Navigator.pushNamed(context, "/calendar");
-    }
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popAndPushNamed(context, "/");
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
