@@ -20,7 +20,7 @@ class UserInfoState extends State<UserInfo> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 60),
           child: Column(

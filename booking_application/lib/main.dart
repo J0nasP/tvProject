@@ -1,4 +1,5 @@
 import 'package:booking_application/loginPage.dart';
+import 'package:booking_application/select_time.dart';
 import 'package:booking_application/signup.dart';
 import 'package:flutter/material.dart';
 import 'welcome.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           '/userinfo': (context) => const UserInfo(),
           '/confirmation': (context) => const ConfirmationPage(),
           '/calendar': (context) => TableBasicsExample(),
+          '/time': (context) => TimeButtons(),
         });
   }
 }
