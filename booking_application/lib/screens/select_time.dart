@@ -5,11 +5,12 @@ import '../shared/utils.dart';
 final controller = GroupButtonController();
 
 class TimeButtons extends StatefulWidget {
+  const TimeButtons({super.key});
   @override
-  _TimeButtonsState createState() => _TimeButtonsState();
+  TimeButtonsState createState() => TimeButtonsState();
 }
 
-class _TimeButtonsState extends State<TimeButtons> {
+class TimeButtonsState extends State<TimeButtons> {
   final controller = GroupButtonController(
     selectedIndex: 20,
     selectedIndexes: [],
@@ -18,7 +19,7 @@ class _TimeButtonsState extends State<TimeButtons> {
   );
 
   @override
-  Widget build(BuildContext build) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(

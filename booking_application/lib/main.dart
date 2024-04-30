@@ -3,9 +3,9 @@ import 'package:booking_application/screens/select_time.dart';
 import 'package:booking_application/screens/signup.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome.dart';
-import 'screens/personCount.dart';
+import 'screens/person_count.dart';
 import 'screens/calendar.dart';
-import 'screens/userInfo.dart';
+import 'screens/user_info.dart';
 import 'screens/confirmation.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
