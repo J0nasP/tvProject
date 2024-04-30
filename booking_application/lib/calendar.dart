@@ -21,7 +21,11 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 30,
+          ),
           TableCalendar(
+            locale: 'da_DK',
             firstDay: kFirstDay,
             lastDay: kLastDay,
             focusedDay: _focusedDay,
@@ -58,7 +62,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/userinfo");
+                Navigator.pushNamed(context, "/time");
               },
               child: Text('Videre'))
         ],

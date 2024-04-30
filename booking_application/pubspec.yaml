@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   booking_calendar: ^1.1.10
   form_validator: ^2.1.1
+  group_button: ^5.3.4
 
 dev_dependencies:
   flutter_test:
