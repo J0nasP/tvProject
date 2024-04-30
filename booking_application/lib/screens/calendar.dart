@@ -1,6 +1,3 @@
-// Copyright 2019 Aleksander Woźniak
-// SPDX-License-Identifier: Apache-2.0
-
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -24,7 +21,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
           onTap: () {
             Navigator.popAndPushNamed(context, "/count");
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
       ),
       body: Column(

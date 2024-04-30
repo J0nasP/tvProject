@@ -13,6 +13,7 @@ class ConfirmationPage extends StatefulWidget {
 class ConfirmationPageState extends State<ConfirmationPage> {
   final _formkey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -37,14 +38,17 @@ class ConfirmationPageState extends State<ConfirmationPage> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
                 onPressed: () {
                   closeAppUsingPop();
                 },
-                child: Text('Luk'),
+                child: const Text('Luk'),
+              ),
+              const SizedBox(
+                height: 20,
               )
             ],
           ),
