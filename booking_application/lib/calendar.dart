@@ -19,11 +19,16 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popAndPushNamed(context, "/count");
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Column(
         children: [
-          SizedBox(
-            height: 30,
-          ),
           TableCalendar(
             locale: 'da_DK',
             firstDay: kFirstDay,
@@ -62,7 +67,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/time");
+                Navigator.popAndPushNamed(context, "/time");
               },
               child: Text('Videre'))
         ],

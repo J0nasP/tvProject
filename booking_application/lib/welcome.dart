@@ -57,7 +57,7 @@ class CustomUserState extends State<CustomUser> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/count");
+                    Navigator.popAndPushNamed(context, "/count");
                   },
                   child: const Text('Fortsæt til betilling'),
                 )

@@ -102,7 +102,7 @@ class PersonCountState extends State<PersonCount> {
                 if (_counter == 0) {
                   return;
                 } else {
-                  Navigator.pushNamed(context, "/calendar");
+                  Navigator.popAndPushNamed(context, "/calendar");
                 }
               },
               child: Text("Videre"),

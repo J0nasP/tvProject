@@ -20,6 +20,14 @@ class _TimeButtonsState extends State<TimeButtons> {
   @override
   Widget build(BuildContext build) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popAndPushNamed(context, "/calendar");
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +54,7 @@ class _TimeButtonsState extends State<TimeButtons> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/userinfo");
+                Navigator.popAndPushNamed(context, "/userinfo");
               },
               child: Text("Videre"),
             )

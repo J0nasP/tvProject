@@ -119,7 +119,7 @@ class UserInfoState extends State<UserInfo> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => {
-                  Navigator.pushNamed(context, "/confirmation"),
+                  Navigator.popAndPushNamed(context, "/confirmation"),
                 },
                 child: const Text("Videre"),
               )

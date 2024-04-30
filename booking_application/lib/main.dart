@@ -19,24 +19,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Table Booking",
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: Colors.blueAccent,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blueAccent,
-          ),
+      title: "Table Booking",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blueAccent,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blueAccent,
         ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const CustomUser(),
-          '/count': (context) => const PersonCount(),
-          "/login": (context) => const LoginPage(),
-          '/signup': (context) => const SignupPage(),
-          '/userinfo': (context) => const UserInfo(),
-          '/confirmation': (context) => const ConfirmationPage(),
-          '/calendar': (context) => TableBasicsExample(),
-          '/time': (context) => TimeButtons(),
-        });
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const CustomUser(),
+        '/count': (context) => const PersonCount(),
+        "/login": (context) => const LoginPage(),
+        '/signup': (context) => const SignupPage(),
+        '/userinfo': (context) => const UserInfo(),
+        '/confirmation': (context) => const ConfirmationPage(),
+        '/calendar': (context) => TableBasicsExample(),
+        '/time': (context) => TimeButtons(),
+      },
+    );
   }
 }
