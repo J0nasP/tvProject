@@ -25,19 +25,19 @@ class _TimeButtonsState extends State<TimeButtons> {
           onTap: () {
             Navigator.popAndPushNamed(context, "/calendar");
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Hvilket tidspunkt ønsker du at reservere bord?",
               style: TextStyle(fontSize: 20),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             GroupButton(
@@ -49,14 +49,14 @@ class _TimeButtonsState extends State<TimeButtons> {
                   debugPrint('Button: $val index: $i selected: $selected'),
               enableDeselect: true,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.popAndPushNamed(context, "/userinfo");
               },
-              child: Text("Videre"),
+              child: const Text("Videre"),
             )
           ],
         ),
