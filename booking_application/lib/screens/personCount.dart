@@ -12,7 +12,6 @@ class PersonCount extends StatefulWidget {
 class PersonCountState extends State<PersonCount> {
   final _formKey = GlobalKey<FormState>;
 
-  int counter2 = 6;
   int _counter = 0;
   void _incrementCounter() {
     setState(() {
@@ -86,7 +85,7 @@ class PersonCountState extends State<PersonCount> {
                   return;
                 } else {
                   Navigator.popAndPushNamed(context, "/calendar",
-                      arguments: _counter);
+                      arguments: [_counter]);
                 }
               },
               child: const Text("Videre"),

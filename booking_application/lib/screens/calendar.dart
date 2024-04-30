@@ -15,6 +15,8 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
 
   @override
   Widget build(BuildContext context) {
+    final List data = ModalRoute.of(context)?.settings.arguments as List;
+
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -63,13 +65,16 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
             },
           ),
           ElevatedButton(
-              onPressed: () {
-                Navigator.popAndPushNamed(
-                  context,
-                  "/time",
-                );
-              },
-              child: Text('Videre'))
+            onPressed: () {
+              data.add(_selectedDay);
+              Navigator.popAndPushNamed(
+                context,
+                "/time",
+                arguments: data,
+              );
+            },
+            child: const Text('Videre'),
+          )
         ],
       ),
     );
