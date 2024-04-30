@@ -18,6 +18,7 @@ class UserInfo extends StatefulWidget {
 class UserInfoState extends State<UserInfo> {
   final _formKey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +26,7 @@ class UserInfoState extends State<UserInfo> {
           onTap: () {
             Navigator.popAndPushNamed(context, "/time");
           },
-          child: Icon(Icons.arrow_back),
+          child: const Icon(Icons.arrow_back),
         ),
       ),
       body: SingleChildScrollView(

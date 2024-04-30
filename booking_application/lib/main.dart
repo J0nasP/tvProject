@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         '/userinfo': (context) => const UserInfo(),
         '/confirmation': (context) => const ConfirmationPage(),
         '/calendar': (context) => TableBasicsExample(),
-        '/time': (context) => TimeButtons(),
+        '/time': (context) => const TimeButtons(),
       },
     );
   }

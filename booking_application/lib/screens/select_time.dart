@@ -20,6 +20,8 @@ class TimeButtonsState extends State<TimeButtons> {
 
   @override
   Widget build(BuildContext context) {
+    final List data = ModalRoute.of(context)?.settings.arguments as List;
+    String selectedValue = "";
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -46,8 +48,10 @@ class TimeButtonsState extends State<TimeButtons> {
               isRadio: false,
               buttons: generateTimeIntervals(),
               maxSelected: 1,
-              onSelected: (val, i, selected) =>
-                  debugPrint('Button: $val index: $i selected: $selected'),
+              onSelected: (val, i, selected) {
+                debugPrint('Button: $val index: $i selected: $selected');
+                selectedValue = val;
+              },
               enableDeselect: true,
             ),
             const SizedBox(
@@ -55,7 +59,12 @@ class TimeButtonsState extends State<TimeButtons> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, "/userinfo");
+                data.add(selectedValue);
+                Navigator.popAndPushNamed(
+                  context,
+                  "/userinfo",
+                  arguments: data,
+                );
               },
               child: const Text("Videre"),
             )
