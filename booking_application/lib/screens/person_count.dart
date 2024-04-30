@@ -29,6 +29,7 @@ class PersonCountState extends State<PersonCount> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
