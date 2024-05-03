@@ -15,6 +15,7 @@ class ConfirmationPageState extends State<ConfirmationPage> {
 
   @override
   Widget build(BuildContext context) {
+    final List data = ModalRoute.of(context)?.settings.arguments as List;
     return Scaffold(
       body: Center(
         child: Container(
@@ -41,6 +42,11 @@ class ConfirmationPageState extends State<ConfirmationPage> {
               const SizedBox(
                 height: 20,
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    print(data);
+                  },
+                  child: Text("debug")),
               ElevatedButton(
                 onPressed: () {
                   closeAppUsingPop();

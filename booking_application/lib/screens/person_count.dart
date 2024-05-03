@@ -85,8 +85,9 @@ class PersonCountState extends State<PersonCount> {
                 if (_counter == 0) {
                   return;
                 } else {
+                  String count = _counter.toString();
                   Navigator.popAndPushNamed(context, "/calendar",
-                      arguments: [_counter]);
+                      arguments: [count]);
                 }
               },
               child: const Text("Videre"),

@@ -5,10 +5,10 @@ import '../shared/utils.dart';
 
 class TableBasicsExample extends StatefulWidget {
   @override
-  _TableBasicsExampleState createState() => _TableBasicsExampleState();
+  TableBasicsExampleState createState() => TableBasicsExampleState();
 }
 
-class _TableBasicsExampleState extends State<TableBasicsExample> {
+class TableBasicsExampleState extends State<TableBasicsExample> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
@@ -66,7 +66,10 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
           ),
           ElevatedButton(
             onPressed: () {
-              data.add(_selectedDay);
+              String chosenDay = _selectedDay.toString();
+              List<String> parts = chosenDay.split(' ');
+              String date = parts[0];
+              data.add(date);
               Navigator.popAndPushNamed(
                 context,
                 "/time",

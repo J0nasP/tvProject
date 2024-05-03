@@ -15,11 +15,39 @@ class UserInfo extends StatefulWidget {
   }
 }
 
+final firstNameController = TextEditingController();
+final lastNameController = TextEditingController();
+final emailController = TextEditingController();
+final streetNameController = TextEditingController();
+final cityController = TextEditingController();
+final phoneController = TextEditingController();
+final remarksController = TextEditingController();
+
+String firstName = "";
+String lastName = "";
+String city = "";
+String street = "";
+String phoneNumber = "";
+String email = "";
+String remarks = "";
+
 class UserInfoState extends State<UserInfo> {
   final _formKey = GlobalKey<FormState>();
 
   @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    streetNameController.dispose();
+    cityController.dispose();
+    phoneController.dispose();
+    remarksController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final List data = ModalRoute.of(context)?.settings.arguments as List;
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -44,6 +72,7 @@ class UserInfoState extends State<UserInfo> {
                 height: 20,
               ),
               TextFormField(
+                controller: firstNameController,
                 validator: reqValidate,
                 decoration: InputDecoration(
                     hintText: "Fornavn",
@@ -53,9 +82,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  firstName = firstNameController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: lastNameController,
                 validator: reqValidate,
                 decoration: InputDecoration(
                     hintText: "Efternavn",
@@ -65,9 +98,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  lastName = lastNameController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: streetNameController,
                 validator: reqValidate,
                 decoration: InputDecoration(
                     hintText: "Gadenavn",
@@ -77,9 +114,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  street = streetNameController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: cityController,
                 validator: reqValidate,
                 decoration: InputDecoration(
                     hintText: "By",
@@ -89,9 +130,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  city = cityController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: phoneController,
                 validator: phoneValidate,
                 decoration: InputDecoration(
                     hintText: "Telefonnummer",
@@ -101,9 +146,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  phoneNumber = phoneController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: emailController,
                 validator: emailValidate,
                 decoration: InputDecoration(
                     hintText: "Email",
@@ -113,9 +162,13 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  email = emailController.text;
+                },
               ),
               const SizedBox(height: 20),
               TextFormField(
+                controller: remarksController,
                 decoration: InputDecoration(
                     hintText: "evt. bemærkninger",
                     border: OutlineInputBorder(
@@ -124,11 +177,26 @@ class UserInfoState extends State<UserInfo> {
                     ),
                     fillColor: Colors.blueAccent.withOpacity(0.1),
                     filled: true),
+                onChanged: (value) {
+                  remarks = remarksController.text;
+                },
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => {
-                  Navigator.popAndPushNamed(context, "/confirmation"),
+                  data.add(firstName),
+                  data.add(lastName),
+                  data.add(street),
+                  data.add(city),
+                  data.add(phoneNumber),
+                  data.add(email),
+                  data.add(phoneNumber),
+                  data.add(remarks),
+                  Navigator.popAndPushNamed(
+                    context,
+                    "/confirmation",
+                    arguments: data,
+                  ),
                 },
                 child: const Text("Videre"),
               )
