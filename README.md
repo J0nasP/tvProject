@@ -1,14 +1,34 @@
 # tvProject
 
-prerequisites
+Prerequisites
+This project is made on a Ubuntu machine
 
 For laravel application:
 
 NPM: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-PHP 8: https://www.php.net/manual/en/install.php 
-Composer: https://getcomposer.org/download/
-MySQL 8: https://dev.mysql.com/downloads/
+This is installed by default on Ubuntu 18.04 or later
 
+PHP 8: https://www.php.net/manual/en/install.php 
+This must be installed manually by running the command:
+```bash
+sudo apt install php libapache2-mod-php php-mysql php-cli unzip
+```
+
+Composer: https://getcomposer.org/download/
+This must be installed manually by downloading the installing script from composer by Running these commands:
+```bash
+cd ~
+curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
+sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+```
+MySQL 8: https://dev.mysql.com/downloads/
+This must be installed manually started by running the commands:
+```bash
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+
+```
 
 For Flutter Applicattion:
 https://docs.flutter.dev/get-started/install
